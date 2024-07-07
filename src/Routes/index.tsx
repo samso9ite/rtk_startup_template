@@ -5,7 +5,7 @@ import { BASE_ROUTES } from "../Constants/baseRoutes";
 import Loader from "../Components/UI/Loader";
 
 
-const Routes: FunctionComponent<Record<string, any>> = () => {
+const Routes: FunctionComponent<Record<string, never>> = () => {
     return(
         <ErrorBoundary>
             <Suspense fallback={<Loader />}>
@@ -14,7 +14,7 @@ const Routes: FunctionComponent<Record<string, any>> = () => {
                         {BASE_ROUTES.map(({useAuth, path, Component, Layout }) => (
                             <Route 
                                 path={path}
-                                Component={Component}
+                                key={path}
                                 element = {
                                     Layout ? (
                                         <Layout>
@@ -25,8 +25,8 @@ const Routes: FunctionComponent<Record<string, any>> = () => {
                                     )
                                 }
                                 />
-                           ))
-
+                           )
+                        )
                         }
                     </BrowserRoutes>
                 </BrowserRouter>

@@ -8,8 +8,8 @@ import AdminDashboardLayout from "../Layout/AdminDashboardLayout";
 type Props = {
     path: string,
     Component: React.FunctionComponent<Record<string, never>>;
-    Layout: React.FunctionComponent<any>|null;
-    useAuth: boolean
+    Layout: React.FunctionComponent<any> | null;
+    useAuth: boolean;
 }
 
 export const BASE_ROUTES: Props[] = [
@@ -23,6 +23,6 @@ export const BASE_ROUTES: Props[] = [
         path: `${BASE_PATHS.APP}/*`,
         Component: AdminDashboardRoute,
         Layout: AdminDashboardLayout,
-        useAuth: true
+        useAuth: false
     }
 ]
